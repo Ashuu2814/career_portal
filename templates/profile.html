@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card p-4 shadow">
+
+        <h2>My Profile</h2>
+
+        <hr>
+
+        {% if user.profile.profile_image %}
+            <img
+                src="{{ user.profile.profile_image.url }}"
+                width="150"
+                class="rounded-circle mb-3"
+            >
+        {% endif %}
+
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-success">
+                Update Profile
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
