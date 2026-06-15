@@ -6,23 +6,11 @@ from .models import Profile
 
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
-from django.contrib.auth.models import User
-from django.http import HttpResponse
 
 
-def create_admin(request):
 
-    if not User.objects.filter(username="admin").exists():
 
-        User.objects.create_superuser(
-            username="admin",
-            email="admin@gmail.com",
-            password="Admin@12345"
-        )
 
-        return HttpResponse("Admin created")
-
-    return HttpResponse("Admin already exists")
 def home(request):
     return render(request, 'home.html')
 
