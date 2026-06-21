@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$ye!plnyv7=+&p5or41m&x^e)kl-56#kpu$12%a_s763mrz13h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["career-portal-pvgr.onrender.com"]
 
 
 # Application definition
