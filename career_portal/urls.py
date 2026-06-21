@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
-from accounts.views import create_admin
+from jobs import views as job_views
 
 from accounts.views import (
     home,
@@ -28,10 +28,9 @@ urlpatterns = [
 
     path('profile/', profile, name='profile'),
 
-    path(
-    'create-admin/',
-    create_admin,
-),
+    path('jobs/', job_views.job_list, name='jobs'),
+
+   
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
